@@ -1,77 +1,94 @@
-# Deployment and DevOps for MERN Applications
+# 💬 Chat App
 
-This assignment focuses on deploying a full MERN stack application to production, implementing CI/CD pipelines, and setting up monitoring for your application.
+A modern chat application built with **React** and **Socket.IO** featuring:
 
-## Assignment Overview
+- Real-time **chat rooms** (create/join)
+- **Private messaging** between users
+- **Notifications** with unread count
+- User **sign-out** functionality
 
-You will:
-1. Prepare your MERN application for production deployment
-2. Deploy the backend to a cloud platform
-3. Deploy the frontend to a static hosting service
-4. Set up CI/CD pipelines with GitHub Actions
-5. Implement monitoring and maintenance strategies
+---
+## Live Demo
 
-## Getting Started
+- Frontend (Vercel): https://real-time-communication-with-socket-rose.vercel.app/
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week7-Assignment.md` file
-4. Use the provided templates and configuration files as a starting point
+- Backend (Render): https://week5-chat-backend-61ui.onrender.com
 
-## Files Included
 
-- `Week7-Assignment.md`: Detailed assignment instructions
-- `.github/workflows/`: GitHub Actions workflow templates
-- `deployment/`: Deployment configuration files and scripts
-- `.env.example`: Example environment variable templates
-- `monitoring/`: Monitoring configuration examples
+## **Features**
 
-## Requirements
+1. **Room Management**
+   - Create or join chat rooms
+   - Switch between rooms easily
 
-- A completed MERN stack application from previous weeks
-- Accounts on the following services:
-  - GitHub
-  - MongoDB Atlas
-  - Render, Railway, or Heroku (for backend)
-  - Vercel, Netlify, or GitHub Pages (for frontend)
-- Basic understanding of CI/CD concepts
+2. **Private Chat**
+   - Chat directly with online users
+   - See typing indicators in private chats
 
-## Deployment Platforms
+3. **Notifications**
+   - Unread message counter
+   - Toggle notifications panel
 
-### Backend Deployment Options
-- **Render**: Easy to use, free tier available
-- **Railway**: Developer-friendly, generous free tier
-- **Heroku**: Well-established, extensive documentation
+4. **User Management**
+   - Sign in with a username
+   - Sign out anytime
 
-### Frontend Deployment Options
-- **Vercel**: Optimized for React apps, easy integration
-- **Netlify**: Great for static sites, good CI/CD
-- **GitHub Pages**: Free, integrated with GitHub
+---
 
-## CI/CD Pipeline
+## **Screenshots**
 
-The assignment includes templates for setting up GitHub Actions workflows:
-- `frontend-ci.yml`: Tests and builds the React application
-- `backend-ci.yml`: Tests the Express.js backend
-- `frontend-cd.yml`: Deploys the frontend to your chosen platform
-- `backend-cd.yml`: Deploys the backend to your chosen platform
+![Login](./screenshots/login.png)
+![Home Page](./screenshots/HOMEPAGE.png)
+![Chat](./screenshots/chat.png)
+![Chat Rooms](./screenshots/chatroom.png)
+![Chat Rooms](./screenshots/chatroom2.png)
 
-## Submission
+---
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+## **Installation**
+# Clone the repository
+```bash
+git clone https://github.com/PLP-MERN-Stack-Development/real-time-communication-with-socket-io-naomitesfe.git
+cd chat-app 
+```
+# Install dependencies
+```bash
+npm install
+```
 
-1. Complete all deployment tasks
-2. Set up CI/CD pipelines with GitHub Actions
-3. Deploy both frontend and backend to production
-4. Document your deployment process in the README.md
-5. Include screenshots of your CI/CD pipeline in action
-6. Add URLs to your deployed applications
+# Start the app
+```bash
+npm start
+```
+Open http://localhost:5173
+ in your browser.
 
-## Resources
+## Usage
+- Enter your username and log in.
+- Select or create a chat room.
+- Send messages in the room or privately to other users.
+- Toggle notifications to view unread messages.
+- Click Sign Out to end your session.
 
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
-- [Render Documentation](https://render.com/docs)
-- [Railway Documentation](https://docs.railway.app/)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Netlify Documentation](https://docs.netlify.com/) 
+
+## Foder Structure
+chat-app/
+├── public/
+├── src/
+│   ├── components/     # React components (ChatRoom, PrivateChat, etc.)
+│   ├── socket/         # Socket.IO logic
+│   ├── App.jsx
+│   └── index.jsx
+├── package.json
+├── .gitignore
+└── README.md
+
+# Contributing
+- Fork the repo.
+- Create a feature branch: git checkout -b feature/my-feature
+- Commit changes: git commit -m "Add my feature"
+- Push branch: git push origin feature/my-feature
+- Open a Pull Request
+
+
+
