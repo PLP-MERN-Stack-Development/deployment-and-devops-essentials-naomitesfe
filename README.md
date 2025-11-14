@@ -1,11 +1,7 @@
-# 💬 Chat App
+# Real-Time Chat Application — Week 7: Deployment & Real-Time Communication.
 
-A modern chat application built with **React** and **Socket.IO** featuring:
-
-- Real-time **chat rooms** (create/join)
-- **Private messaging** between users
-- **Notifications** with unread count
-- User **sign-out** functionality
+This is a real-time chat application built using Node.js, Express, Socket.io, and a React + Vite frontend.
+It supports live messaging, private chat, typing indicators, online-user tracking, and room-based communication.
 
 ---
 ## Live Demo
@@ -15,24 +11,27 @@ A modern chat application built with **React** and **Socket.IO** featuring:
 - Backend (Render): https://week5-chat-backend-61ui.onrender.com
 
 
-## **Features**
+## Features
+# Real-Time Communication
+- Live chat (public)
+- Private messaging (1-to-1)
+- Typing indicator
+- Online users list
+- System notifications (join/leave)
+- Chat rooms
 
-1. **Room Management**
-   - Create or join chat rooms
-   - Switch between rooms easily
+# Backend (Node.js + Socket.io)
+- Express server
+- In-memory users + messages
+- CORS configured for frontend deployment
+- Real-time socket events
 
-2. **Private Chat**
-   - Chat directly with online users
-   - See typing indicators in private chats
+# Frontend (React + Vite)
 
-3. **Notifications**
-   - Unread message counter
-   - Toggle notifications panel
-
-4. **User Management**
-   - Sign in with a username
-   - Sign out anytime
-
+- Clean UI for chat
+- Socket.io client integration
+- Displays online users
+- Supports rooms + private chat
 ---
 
 ## **Screenshots**
@@ -44,24 +43,56 @@ A modern chat application built with **React** and **Socket.IO** featuring:
 ![Chat Rooms](./screenshots/chatroom2.png)
 
 ---
-
-## **Installation**
-# Clone the repository
+project-root/
+│── server/
+│     ├── server.js
+│     ├── package.json
+│     ├── .env.example
+│
+│── client/
+│     ├── src/
+│     ├── package.json
+│     ├── vite.config.js
+│     ├── .env.example
+│
+│── README.md
+---
+# How to Run Locally
+1️⃣ Clone the repository
 ```bash
-git clone https://github.com/PLP-MERN-Stack-Development/real-time-communication-with-socket-io-naomitesfe.git
-cd chat-app 
+git clone https://github.com/PLP-MERN-Stack-Development/deployment-and-devops-essentials-naomitesfe
+cd deployment-and-devops-essentials-naomitesfe
 ```
-# Install dependencies
+
+2️⃣ Run the Backend (Node.js + Socket.io)
 ```bash
+cd backend
 npm install
+npm run dev
 ```
+Backend runs on:
+👉 http://localhost:5000
 
-# Start the app
+3️⃣ Run the Frontend (React + Vite)
 ```bash
-npm start
+cd frontend
+npm install
+npm run dev
 ```
-Open http://localhost:5173
- in your browser.
+Frontend runs on:
+👉 http://localhost:5173
+
+# 🔧 Environment Variables
+Backend .env
+```bash
+CLIENT_URL=http://localhost:5173
+PORT=5000
+```
+```bash
+Frontend .env
+VITE_SOCKET_URL=http://localhost:5000
+```
+When deployed, replace with your Render + Vercel URLs.
 
 ## Usage
 - Enter your username and log in.
@@ -70,18 +101,23 @@ Open http://localhost:5173
 - Toggle notifications to view unread messages.
 - Click Sign Out to end your session.
 
+## Deployment
+# Backend: Render
+- Created a new Web Service
+- Set the build command: npm install
+- Start command: node server.js
+- Added environment variables under “Environment”
+- Added CORS whitelist to allow Vercel frontend
 
-## Foder Structure
-chat-app/
-├── public/
-├── src/
-│   ├── components/     # React components (ChatRoom, PrivateChat, etc.)
-│   ├── socket/         # Socket.IO logic
-│   ├── App.jsx
-│   └── index.jsx
-├── package.json
-├── .gitignore
-└── README.md
+# Frontend: Vercel
+- Connected GitHub repo
+- Vercel automatically built Vite project
+- Added environment variable: VITE_SOCKET_URL
+- Deployment runs automatically on every push
+
+# CI/CD 
+- GitHub → Vercel auto deployment
+- GitHub → Render auto redeploy 
 
 # Contributing
 - Fork the repo.
